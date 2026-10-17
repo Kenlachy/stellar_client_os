@@ -32,6 +32,7 @@ import { CampaignAnalyticsDashboard } from "@/components/modules/campaign/analyt
 import { BackerCommunity } from "@/components/modules/campaign/community/BackerCommunity";
 import { CampaignFollowButton } from "@/components/modules/campaign/follow/CampaignFollowButton";
 import { TopBackers } from "@/components/modules/campaign/backers/TopBackers";
+import { CampaignReviews } from "@/components/modules/campaign/reviews/CampaignReviews";
 import { TOP_BACKERS_LIMIT } from "@/types/campaign-backers";
 import { CampaignFundingVelocityChart } from "@/components/modules/campaign/FundingVelocityChart";
 import { CampaignAccessibilityControls } from "@/components/modules/campaign/CampaignAccessibilityControls";
@@ -699,6 +700,9 @@ export default function CampaignDetailPage({ params }: { params: Promise<{ id: s
               <BackerCommunity campaignId={campaign.id} canManage={isCreatorView} />
             </div>
           </div>
+
+          {/* Backer testimonials & star ratings (#1250) */}
+          <CampaignReviews campaignId={campaign.id} viewerAddress={viewerAddress} />
         </TabsContent>
 
         <TabsContent value="ar-view">
